@@ -128,9 +128,11 @@ Full implementation specifications: See PDF_REPORT_TEMPLATE.md.
 |---|---|---|
 | PROJECT_INSTRUCTIONS.md | System prompt — all behavioral rules | Automatically governs all sessions |
 | BIAS_TRANSPARENCY_PROTOCOL.md | Full bias disclosure protocol | Start of every research/analysis task |
-| FIBONACCI_BIAS_SCALE.md | Bias scale definition and movement rules | When bias scale assessment is requested |
+| FIBONACCI_ACCURACY_SCALE.md | Factual accuracy scale definition and movement rules | When accuracy assessment is requested |
+| FIBONACCI_POLITICAL_BIAS_SCALE.md | Political bias scale definition and movement rules | When bias assessment is requested |
 | PDF_REPORT_TEMPLATE.md | Report template, formatting specs, ReportLab notes | Before generating any formal report |
-| PROJECT_MEMORY.md | This file — persistent user and project context | Reference for session continuity |
+| QUALITY_ASSURANCE.md | Ongoing diagnostic protocol | Every five sessions and when behavior feels degraded |
+| PROJECT_MEMORY_PUBLIC.md | This file — persistent user and project context | Reference for session continuity |
 
 ---
 
