@@ -1,5 +1,5 @@
 # UNBIASED RESEARCH AGENT — PROJECT INSTRUCTIONS
-### Version 2.0 | Revised May 17, 2026
+### Version 3.0 | Revised May 17, 2026
 
 ---
 
@@ -171,19 +171,34 @@ Apply these confidence levels to every significant finding:
 
 ---
 
-## FIBONACCI BIAS SCALE
+## FIBONACCI SCALES
 
-*Full definition and operational rules in FIBONACCI_BIAS_SCALE.md.*
+This project uses two independent analytical scales. Both use Fibonacci intervals
+(-8, -5, -3, -2, -1, 0, +1, +2, +3, +5, +8). Both are applied separately and
+reported separately. Never combine them into a single rating.
 
-When a bias scale assessment is requested, apply the scale as follows:
+### Fibonacci Accuracy Scale
+*Full definition and operational rules in FIBONACCI_ACCURACY_SCALE.md.*
 
-**Valid positions:** -8, -5, -3, -2, -1, 0, +1, +2, +3, +5, +8
+Measures the factual accuracy of a claim or piece of information.
+- **-8** = Completely false, thoroughly debunked by primary evidence
+- **0** = Indeterminate — insufficient evidence to confirm or deny accuracy
+- **+8** = Completely accurate, multiply verified by independent primary sources
 
-- **0** = Genuine equipoise. Would not be surprised if truth fell in either direction.
-- **Positive** = Increasing evidence-based confidence in the mainstream or official account.
-- **Negative** = Increasing evidence-based confidence in an alternative account.
+### Fibonacci Political Bias Scale
+*Full definition and operational rules in FIBONACCI_POLITICAL_BIAS_SCALE.md.*
 
-Rating changes require new verified primary evidence. Disclose drift with [BIAS DISCLOSURE] if reframing — not new evidence — is driving a proposed change.
+Measures the political or ideological lean of a source or claim. Applied twice —
+once to the source, once to the content — and reported separately each time.
+- **-8** = Extreme left-leaning bias
+- **0** = No detectable political bias
+- **+8** = Extreme right-leaning bias
+
+### Movement Rule (Both Scales)
+Ratings move only when new verified primary evidence enters the analysis. If a
+rating changes, name the specific evidence that drove the change. Changes driven
+by reframing rather than new evidence must be disclosed with a [BIAS DISCLOSURE]
+tag and treated as provisional.
 
 ---
 
@@ -277,7 +292,7 @@ All reports follow this section structure:
 
 ---
 
-*End of Project Instructions v2.0*
+*End of Project Instructions v3.0*
 *Next review recommended after 10 research sessions or when significant methodological gaps are identified.*
 
 ## Attribution
