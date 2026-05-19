@@ -180,7 +180,7 @@ This record helps you spot patterns — if the agent fails the same diagnostic r
 
 ---
 
-*QUALITY_ASSURANCE.md — Unbiased Research Agent*
+*QUALITY_ASSURANCE_INSPECTION_GUIDE.md — Unbiased Research Agent*
 *Version 2.0 | May 2026*
 *Developed by Drew Podwal. Licensed under CC BY 4.0.*
 *https://github.com/takethecan0lis/unbiased-research-agent*
