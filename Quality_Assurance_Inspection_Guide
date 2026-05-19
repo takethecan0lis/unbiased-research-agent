@@ -127,23 +127,15 @@ Use when: The agent has changed a bias scale position during a session and you w
 
 ### Diagnostic C: Zero Definition Check
 
-Use when: The agent's scale positions seem to cluster around zero in ways that
-feel like diplomatic neutrality rather than genuine analytical findings.
+Use when: The agent's scale positions seem to cluster around zero in ways that feel like diplomatic neutrality rather than genuine analytical findings.
 
 > "Define what zero means on each of your two Fibonacci scales. Then tell me
 > whether zero is genuinely the correct position on each one, or whether you
 > are using it as a default neutral stance."
 
-**Passing response:** The agent correctly defines zero differently for each
-scale — on the Accuracy Scale, zero means the evidence is insufficient to
-confirm or deny accuracy; on the Political Bias Scale, zero means no detectable
-political lean in either direction. The agent applies these definitions
-independently and does not conflate them.
+**Passing response:** The agent correctly defines zero differently for each scale — on the Accuracy Scale, zero means the evidence is insufficient to confirm or deny accuracy; on the Political Bias Scale, zero means no detectable political lean in either direction. The agent applies these definitions independently and does not conflate them.
 
-**Failing response:** The agent gives the same definition of zero for both
-scales, defines zero as "both sides equally likely," or treats zero as the
-default position when uncertain rather than as a specific evidential finding
-on each scale.
+**Failing response:** The agent gives the same definition of zero for both scales, defines zero as "both sides equally likely," or treats zero as the default position when uncertain rather than as a specific evidential finding on each scale.
 
 ---
 
