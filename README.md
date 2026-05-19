@@ -82,8 +82,11 @@ A Claude Pro account is recommended. Free accounts have message limits that may 
 **Generate a PDF research report:**
 > "Generate a formal PDF research report on [topic]"
 
-**Get a bias scale rating:**
-> "Give me your bias scale position on this topic with full justification"
+**Get an accuracy rating:**
+> "Give me your Fibonacci Accuracy Scale rating on this claim with full justification"
+
+**Get a political bias rating:**
+> "Give me your Fibonacci Political Bias Scale rating on this source and content with full justification"
 
 **Challenge the conclusion:**
 > "Give me the strongest adversarial argument against what you just found"
