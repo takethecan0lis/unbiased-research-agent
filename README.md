@@ -1,3 +1,7 @@
+# README
+## Unbiased Research Agent
+### Version 2.0 | May 2026
+
 # Unbiased Research Agent
 ### A Claude Project for rigorous, bias-disclosing fact-check and research. Operates under Ten Commandments it cannot override and discloses its own trained biases in real time.
 ---
@@ -18,7 +22,7 @@ Standard AI conversations have no persistent methodology, no rules about institu
 
 **It rates confidence on every claim.** Every significant finding is labeled: `Confirmed`, `Likely`, `Disputed`, `Unsubstantiated`, or `False`. You always know how solid the ground is.
 
-**It has a bias scale.** On contested topics, you can ask the agent to rate its position on the Fibonacci Bias Scale — a sliding scale from -8 to +8 where zero means genuine equipoise, defined operationally by *surprise symmetry*: the analyst would not be surprised if the truth fell in either direction. Positive positions favor the official or mainstream account. Negative positions favor an alternative account. It is not a measure of what is true. It is a measure of where the evidence currently points.
+**It has two analytical scales.** The Fibonacci Accuracy Scale rates how factually accurate a claim is, from -8 (completely false) through 0 (indeterminate — insufficient evidence to determine) to +8 (completely verified by independent primary sources). The Fibonacci Political Bias Scale rates political lean from -8 (extreme left) through 0 (no detectable bias) to +8 (extreme right), applied separately to the source and to the content itself. A biased source can report accurate facts. An accurate claim can be politically slanted. The two scales capture what a single scale cannot.
 
 **It follows a source hierarchy with an Institutional Implication Exception.** When the institution producing evidence is itself implicated in the claim being investigated — the FBI analyzing an FBI operation, for example — that source is automatically reclassified from Tier 1 to Tier 3 and treated as an interested party account.
 
@@ -38,7 +42,8 @@ It is not a search engine. It is not infallible. It is not a replacement for you
 |---|---|
 | `PROJECT_INSTRUCTIONS.md` | Paste into Claude's Project Instructions field. The Ten Commandments, source hierarchy, bias disclosure rules, research methodology, and confidence scoring system. |
 | `BIAS_TRANSPARENCY_PROTOCOL.md` | Upload to project knowledge. Full specification of the five named dispositions the agent monitors and discloses, the Institutional Implication Rule, and the Surprise Test protocol. |
-| `FIBONACCI_BIAS_SCALE.md` | Upload to project knowledge. Full definition of the bias scale, anchor definitions, movement rules, and reporting format. |
+| `FIBONACCI_ACCURACY_SCALE.md` | Upload to project knowledge. Measures factual accuracy of a claim or piece of information on a scale from -8 (completely false) through 0 (indeterminate) to +8 (completely verified). |
+| `FIBONACCI_POLITICAL_BIAS_SCALE.md` | Upload to project knowledge. Measures political or ideological lean on a scale from -8 (extreme left) through 0 (no detectable bias) to +8 (extreme right). Applied separately to source and content. |
 | `PDF_REPORT_TEMPLATE.md` | Upload to project knowledge. Report structure, section definitions, and PDF generation toolchain. |
 | `PROJECT_MEMORY_PUBLIC.md` | Upload to project knowledge. Persistent methodological context and your personal research history. Intentionally left blank in the public version — fill it in as you run sessions. |
 | `QUALITY_ASSURANCE.md` | Run at setup, periodically, and any time the agent's behavior feels degraded or inconsistent. Contains the full diagnostic query, four targeted failure-mode checks, a recommended QA schedule, and a logging format. | 
@@ -120,4 +125,4 @@ This project improves through critique. If you find a methodological gap, a plac
 
 ---
 
-*Version 1.0 | May 2026*
+*Version 2.0 | May 2026*
