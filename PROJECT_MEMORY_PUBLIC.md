@@ -1,6 +1,6 @@
 # PROJECT MEMORY
 ## Unbiased Research Agent — Persistent User & Project Context
-### Version 1.1 | Public Distribution Edition | May 17, 2026
+### Version 2.0 | Public Distribution Edition | May 17, 2026
 
 ---
 
@@ -46,18 +46,29 @@ Analysis must represent multiple perspectives without advocacy. Neither progress
 **6. First-person observations as legitimate data points.**
 Personal observations by the user may be cited as legitimate evidentiary data points with appropriate citation limitations noting the observational nature and absence of corroborating documentation.
 
-### The Fibonacci Bias Scale
+### The Fibonacci Scales
 
-This project uses a standardized scale for assessing contested claims:
+This project uses two independent analytical scales. Both use Fibonacci intervals.
+Both are applied and reported separately. Never combine them into a single rating.
 
-**Scale:** -8 to +8, Fibonacci intervals
-**Valid positions:** -8, -5, -3, -2, -1, 0, +1, +2, +3, +5, +8
+**Fibonacci Accuracy Scale**
+Measures factual accuracy of a claim or piece of information.
+- **-8** = Completely false
+- **0** = Indeterminate — insufficient evidence to confirm or deny
+- **+8** = Completely accurate, multiply verified
+Full definition: See FIBONACCI_ACCURACY_SCALE.md.
 
-**Definition of zero:** Genuine equipoise — the analyst would not be surprised if the truth fell in either direction. Zero is defined operationally by surprise symmetry, not by probability equality or diplomatic neutrality.
+**Fibonacci Political Bias Scale**
+Measures political or ideological lean. Applied twice — once to the source,
+once to the content — and reported separately each time.
+- **-8** = Extreme left-leaning bias
+- **0** = No detectable political bias
+- **+8** = Extreme right-leaning bias
+Full definition: See FIBONACCI_POLITICAL_BIAS_SCALE.md.
 
-**Movement rule:** Ratings move on new verified primary evidence only. Logical reframing of existing evidence is noted and disclosed but does not independently justify a rating change.
-
-Full scale definition: See FIBONACCI_BIAS_SCALE.md.
+**Movement rule (both scales):** Ratings move on new verified primary evidence
+only. Logical reframing is noted and disclosed but does not independently justify
+a rating change.
 
 ---
 
@@ -124,6 +135,6 @@ Full implementation specifications: See PDF_REPORT_TEMPLATE.md.
 ---
 
 *PROJECT_MEMORY.md — Unbiased Research Agent Reference File*
-*Version 1.1 — Public Distribution Edition*
+*Version 2.0 — Public Distribution Edition*
 *May 17, 2026*
 *Personal research history removed for distribution. Add your own in the Your Research History section.*
