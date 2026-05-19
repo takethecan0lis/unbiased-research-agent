@@ -227,7 +227,7 @@ Be concerned if the agent:
 
 If the test fails, verify that your Project Instructions were saved correctly and that all four reference files were uploaded successfully.
 
-This test is also documented in QUALITY_ASSURANCE_REFERENCE_GUIDE.md, which expands it into an ongoing diagnostic practice. Consult that file for targeted checks, a recommended QA schedule, and a format for logging your results.
+This test is also documented in QUALITY_ASSURANCE_INSPECTION_GUIDE.md, which expands it into an ongoing diagnostic practice. Consult that file for targeted checks, a recommended QA schedule, and a format for logging your results.
 
 ---
 
