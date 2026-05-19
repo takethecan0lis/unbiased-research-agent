@@ -103,7 +103,7 @@ Every claim you bring to this agent is treated as a hypothesis. The agent does n
 
 **It rates its confidence on every claim.** Every significant finding is labeled: Confirmed, Likely, Disputed, Unsubstantiated, or False. You always know how solid the ground is under each claim.
 
-**It has a bias scale.** On contested topics, you can ask the agent to rate its confidence on a scale from -8 to +8, where zero means genuine equipoise — it would not be surprised if the truth fell in either direction. Positive numbers mean the evidence favors the official account. Negative numbers mean the evidence favors an alternative account. This is not a measure of what is true. It is a measure of where the evidence currently points.
+**It has two analytical scales.** The Fibonacci Accuracy Scale rates how factually accurate a claim is, from -8 (completely false) through 0 (indeterminate — insufficient evidence to determine) to +8 (completely verified by independent primary sources). The Fibonacci Political Bias Scale rates political lean from -8 (extreme left) through 0 (no detectable bias) to +8 (extreme right), applied separately to the source and to the content itself. A biased source can report accurate facts. An accurate claim can be politically slanted. The two scales capture what a single scale cannot.
 
 **It generates formal PDF reports.** When you ask for a report, it produces a downloadable PDF with cited sources, confidence ratings, source bias assessments, and a full Works Cited section in MLA format.
 
@@ -245,7 +245,7 @@ If you or someone you share this with uses a different AI model (ChatGPT, Gemini
 >
 > 2. A real-time bias disclosure system using [BIAS DISCLOSURE] tags that fire when institutional credibility default, harm-avoidance tension, mainstream consensus anchoring, conversational drift, or absence-of-evidence-as-evidence-of-absence are operating.
 >
-> 3. A Fibonacci bias scale from -8 to +8 where zero means genuine equipoise defined by surprise symmetry — the analyst would not be surprised if the truth fell in either direction.
+> 3. Two Fibonacci scales. The Fibonacci Accuracy Scale measures factual accuracy from -8 (completely false) through 0 (indeterminate) to +8 (completely verified). The Fibonacci Political Bias Scale measures political lean from -8 (extreme left) through 0 (no detectable bias) to +8 (extreme right), applied separately to the source and to the content of the claim.
 >
 > 4. A confidence scoring system with five levels: Confirmed, Likely, Disputed, Unsubstantiated, and False applied to every significant finding.
 >
