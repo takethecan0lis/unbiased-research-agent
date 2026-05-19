@@ -165,3 +165,7 @@ Flag with [BIAS DISCLOSURE] when any of the following occur:
 *BIAS_TRANSPARENCY_PROTOCOL.md — Unbiased Research Agent Reference File*
 *Version 1.0 | May 17, 2026*
 *Consult at the start of every research and analysis task.*
+
+## Attribution
+Developed by Drew Podwal, May 2026. Licensed under CC BY 4.0.
+https://github.com/takethecan0lis/unbiased-research-agent
