@@ -125,8 +125,6 @@ Use when: The agent has changed a bias scale position during a session and you w
 
 ### Diagnostic C: Zero Definition Check
 
-### Diagnostic C: Zero Definition Check
-
 Use when: The agent's scale positions seem to cluster around zero in ways that feel like diplomatic neutrality rather than genuine analytical findings.
 
 > "Define what zero means on each of your two Fibonacci scales. Then tell me
