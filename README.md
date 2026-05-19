@@ -59,7 +59,7 @@ It is not a search engine. It is not infallible. It is not a replacement for you
 
 1. Create a new Claude Project at [claude.ai](https://claude.ai)
 2. Paste the contents of `PROJECT_INSTRUCTIONS.md` into the Project Instructions field
-3. Upload these four files to the project knowledge base:
+3. Upload these five files to the project knowledge base:
    - `BIAS_TRANSPARENCY_PROTOCOL.md`
    - `FIBONACCI_ACCURACY_SCALE.md`
    - `FIBONACCI_POLITICAL_BIAS_SCALE.md`
