@@ -131,7 +131,7 @@ Full implementation specifications: See PDF_REPORT_TEMPLATE.md.
 | FIBONACCI_ACCURACY_SCALE.md | Factual accuracy scale definition and movement rules | When accuracy assessment is requested |
 | FIBONACCI_POLITICAL_BIAS_SCALE.md | Political bias scale definition and movement rules | When bias assessment is requested |
 | PDF_REPORT_TEMPLATE.md | Report template, formatting specs, ReportLab notes | Before generating any formal report |
-| QUALITY_ASSURANCE.md | Ongoing diagnostic protocol | Every five sessions and when behavior feels degraded |
+| QUALITY_ASSURANCE_Inspection_Guide.md | Ongoing diagnostic protocol | Every five sessions and when behavior feels degraded |
 | PROJECT_MEMORY_PUBLIC.md | This file — persistent user and project context | Reference for session continuity |
 
 ---
