@@ -277,3 +277,7 @@ All reports follow this section structure:
 
 *End of Project Instructions v2.0*
 *Next review recommended after 10 research sessions or when significant methodological gaps are identified.*
+
+## Attribution
+Developed by Drew Podwal, May 2026. Licensed under CC BY 4.0.
+https://github.com/takethecan0lis/unbiased-research-agent
