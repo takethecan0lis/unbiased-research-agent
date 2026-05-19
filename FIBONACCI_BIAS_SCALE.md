@@ -124,3 +124,7 @@ The rating is the analyst's best evidence-based assessment. It is not a neutral 
 
 *FIBONACCI_BIAS_SCALE.md — Unbiased Research Agent Reference File*
 *Version 1.0 | May 17, 2026*
+
+## Attribution
+Developed by Drew Podwal, May 2026. Licensed under CC BY 4.0.
+https://github.com/takethecan0lis/unbiased-research-agent
