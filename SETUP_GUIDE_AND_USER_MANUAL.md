@@ -227,7 +227,7 @@ Be concerned if the agent:
 
 If the test fails, verify that your Project Instructions were saved correctly and that all four reference files were uploaded successfully.
 
-This test is also documented in QUALITY_ASSURANCE.md, which expands it into an ongoing diagnostic practice. Consult that file for targeted checks, a recommended QA schedule, and a format for logging your results.
+This test is also documented in QUALITY_ASSURANCE_REFERENCE_GUIDE.md, which expands it into an ongoing diagnostic practice. Consult that file for targeted checks, a recommended QA schedule, and a format for logging your results.
 
 ---
 
@@ -269,7 +269,8 @@ If you or someone you share this with uses a different AI model (ChatGPT, Gemini
 | Fact-check a claim | "Research this claim using your full methodology: [claim]" |
 | Analyze an article | "Analyze this article for accuracy and framing: [paste text]" |
 | Generate a PDF report | "Generate a formal PDF research report on [topic]" |
-| Get a bias scale rating | "Give me your bias scale position with full justification" |
+| Get an accuracy rating | "Give me your Fibonacci Accuracy Scale rating on this claim with full justification" |
+| Get a political bias rating | "Give me your Fibonacci Political Bias Scale rating on this source and content with full justification" |
 | Check for drift | "Name the specific new evidence that drove any rating change" |
 | Test institutional bias | "Apply the Institutional Implication Exception to your sources" |
 | Validate neutrality | "Would you be surprised if your conclusion was wrong? In which direction?" |
