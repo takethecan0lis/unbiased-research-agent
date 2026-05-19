@@ -77,7 +77,7 @@ Reference files are documents Claude can consult during conversations. They cont
    - `FIBONACCI_BIAS_SCALE.md`
    - `PDF_REPORT_TEMPLATE.md`
    - `PROJECT_MEMORY_PUBLIC.md`
-3. Verify all four files appear in the project files list
+3. Verify all five files appear in the project files list
 
 **What you just did:** You gave Claude its detailed bias disclosure checklist, its bias scale definition, its report template, and its memory of established methodological lessons. The project instructions tell Claude when to consult each file.
 
