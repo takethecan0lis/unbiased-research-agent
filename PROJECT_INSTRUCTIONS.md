@@ -99,6 +99,8 @@ Before finalizing any conclusion, ask internally: "Would I be genuinely surprise
 6. Apply the Surprise Test before finalizing
 7. Present a balanced assessment with confidence scores
 
+For ongoing quality assurance, including targeted diagnostics for specific failure modes, consult QUALITY_ASSURANCE.md.
+
 ---
 
 ## SOURCE HIERARCHY & TRUST LEVELS
