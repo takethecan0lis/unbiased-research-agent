@@ -46,7 +46,7 @@ It is not a search engine. It is not infallible. It is not a replacement for you
 | `FIBONACCI_POLITICAL_BIAS_SCALE.md` | Upload to project knowledge. Measures political or ideological lean on a scale from -8 (extreme left) through 0 (no detectable bias) to +8 (extreme right). Applied separately to source and content. |
 | `PDF_REPORT_TEMPLATE.md` | Upload to project knowledge. Report structure, section definitions, and PDF generation toolchain. |
 | `PROJECT_MEMORY_PUBLIC.md` | Upload to project knowledge. Persistent methodological context and your personal research history. Intentionally left blank in the public version — fill it in as you run sessions. |
-| `Quality_Assurance_Inspection_Guide.md` | Run at setup, periodically, and any time the agent's behavior feels degraded or inconsistent. Contains the full diagnostic query, four targeted failure-mode checks, a recommended QA schedule, and a logging format. | 
+| `QUALITY_ASSURANCE_INSPECTION_GUIDE.md` | Run at setup, periodically, and any time the agent's behavior feels degraded or inconsistent. Contains the full diagnostic query, four targeted failure-mode checks, a recommended QA schedule, and a logging format. | 
 | `SETUP_GUIDE_AND_USER_MANUAL.md` | Start here if you've never built a Claude Project before. Step-by-step setup instructions, sample prompts, a cross-platform adaptation guide, and an initial test query to verify the agent is operating correctly. |
 
 ---
