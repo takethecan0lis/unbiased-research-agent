@@ -283,6 +283,67 @@ doc = SimpleDocTemplate(
 - Italic text in citations: use `<i>Publication Name</i>` inside Paragraph strings.
 - Bold inline text: use `<b>text</b>` inside Paragraph strings.
 
+### Table Construction Rules
+
+**Critical: All table cell content must use Paragraph objects, not raw strings.**
+Raw strings do not word-wrap in ReportLab. Every cell must wrap its content
+in a Paragraph to force text to wrap within the column width.
+
+**Critical: Always define explicit column widths that sum to the content width.**
+Content width for Letter with 1" margins = 6.5 inches = 468 points.
+
+**Cell styles for tables:**
+```python
+cell = ParagraphStyle("Cell", parent=base, fontName="Times-Roman",
+       fontSize=9, leading=12, spaceAfter=2, alignment=TA_LEFT)
+
+cell_bold = ParagraphStyle("CellBold", parent=base, fontName="Times-Bold",
+            fontSize=9, leading=12, spaceAfter=2, alignment=TA_LEFT)
+```
+
+**Standard column width patterns:**
+
+Two-column table (label + description):
+```python
+col_widths = [1.5*inch, 5.0*inch]  # sums to 6.5"
+```
+
+Three-column table (short + medium + long):
+```python
+col_widths = [1.0*inch, 1.5*inch, 4.0*inch]  # sums to 6.5"
+```
+
+Four-column table:
+```python
+col_widths = [1.0*inch, 0.8*inch, 0.8*inch, 3.9*inch]  # sums to 6.5"
+```
+
+**Standard table construction pattern:**
+```python
+table_data = [
+    [Paragraph("<b>Header 1</b>", cell_bold),
+     Paragraph("<b>Header 2</b>", cell_bold),
+     Paragraph("<b>Header 3</b>", cell_bold)],
+    [Paragraph("Row content", cell),
+     Paragraph("Row content", cell),
+     Paragraph("Row content", cell)],
+]
+
+table = Table(table_data, colWidths=col_widths)
+table.setStyle(TableStyle([
+    ("BACKGROUND",   (0,0), (-1,0),  colors.HexColor("#DDDDDD")),
+    ("GRID",         (0,0), (-1,-1), 0.5, colors.black),
+    ("VALIGN",       (0,0), (-1,-1), "TOP"),
+    ("TOPPADDING",   (0,0), (-1,-1), 4),
+    ("BOTTOMPADDING",(0,0), (-1,-1), 4),
+    ("LEFTPADDING",  (0,0), (-1,-1), 4),
+    ("RIGHTPADDING", (0,0), (-1,-1), 4),
+]))
+story.append(table)
+```
+
+**VALIGN TOP is mandatory.** Without it, multi-line cells vertically centertheir content, which misaligns rows with uneven text lengths.
+
 ---
 
 ## WORKS CITED — MLA FORMAT WITH BIAS ASSESSMENT
