@@ -283,16 +283,11 @@ doc = SimpleDocTemplate(
 - Italic text in citations: use `<i>Publication Name</i>` inside Paragraph strings.
 - Bold inline text: use `<b>text</b>` inside Paragraph strings.
 
-### Table Construction Rules
+### Table Construction — Complete Implementation
 
-**Critical: All table cell content must use Paragraph objects, not raw strings.**
-Raw strings do not word-wrap in ReportLab. Every cell must wrap its content
-in a Paragraph to force text to wrap within the column width.
+Add these two style definitions immediately after the existing style
+definitions block. They are mandatory for all tables:
 
-**Critical: Always define explicit column widths that sum to the content width.**
-Content width for Letter with 1" margins = 6.5 inches = 468 points.
-
-**Cell styles for tables:**
 ```python
 cell = ParagraphStyle("Cell", parent=base, fontName="Times-Roman",
        fontSize=9, leading=12, spaceAfter=2, alignment=TA_LEFT)
@@ -301,48 +296,117 @@ cell_bold = ParagraphStyle("CellBold", parent=base, fontName="Times-Bold",
             fontSize=9, leading=12, spaceAfter=2, alignment=TA_LEFT)
 ```
 
-**Standard column width patterns:**
+Add this complete table builder function immediately after the hr() and
+section() helper functions. Use it for EVERY table in the report without
+exception:
 
-Two-column table (label + description):
 ```python
-col_widths = [1.5*inch, 5.0*inch]  # sums to 6.5"
+def make_table(headers, rows, col_widths):
+    """
+    Build a ReportLab table with guaranteed word wrap and no cell overflow.
+    
+    headers: list of header strings e.g. ["Source", "Tier", "Notes"]
+    rows: list of lists of strings e.g. [["FBI Report", "3", "Implicated"]]
+    col_widths: list of inch values that MUST sum to 6.5
+                e.g. [2.0*inch, 0.75*inch, 3.75*inch]
+    
+    COLUMN WIDTH RULE: values must sum to exactly 6.5*inch (the content
+    width for Letter paper with 1" margins). If they do not sum to 6.5,
+    content will overflow or leave dead space.
+    """
+    # Build header row using Paragraph objects — never raw strings
+    header_row = [Paragraph(h, cell_bold) for h in headers]
+    
+    # Build data rows using Paragraph objects — never raw strings
+    data_rows = []
+    for row in rows:
+        data_rows.append([Paragraph(str(cell_val), cell) 
+                          for cell_val in row])
+    
+    table_data = [header_row] + data_rows
+    
+    t = Table(table_data, colWidths=col_widths, repeatRows=1)
+    t.setStyle(TableStyle([
+        ("BACKGROUND",    (0, 0), (-1, 0),  colors.HexColor("#DDDDDD")),
+        ("GRID",          (0, 0), (-1, -1), 0.5, colors.black),
+        ("VALIGN",        (0, 0), (-1, -1), "TOP"),
+        ("TOPPADDING",    (0, 0), (-1, -1), 4),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ("LEFTPADDING",   (0, 0), (-1, -1), 4),
+        ("RIGHTPADDING",  (0, 0), (-1, -1), 4),
+        ("FONTSIZE",      (0, 0), (-1, -1), 9),
+        ("ROWBACKGROUNDS",(0, 1), (-1, -1), 
+         [colors.white, colors.HexColor("#F5F5F5")]),
+    ]))
+    return t
 ```
 
-Three-column table (short + medium + long):
+### Standard Column Width Configurations
+
+ALWAYS use one of these configurations. Choose based on number of columns
+and content type. Values are pre-calculated to sum to 6.5 inches.
+
 ```python
-col_widths = [1.0*inch, 1.5*inch, 4.0*inch]  # sums to 6.5"
+# 2 columns — label + long description
+COL_2_LABEL_DESC    = [1.5*inch, 5.0*inch]
+
+# 3 columns — source + short field + long notes
+COL_3_SOURCE_NOTES  = [2.5*inch, 0.75*inch, 3.25*inch]
+
+# 3 columns — source + bias + content bias (political bias table)
+COL_3_BIAS_TABLE    = [2.75*inch, 0.75*inch, 0.75*inch, 2.25*inch]
+
+# 4 columns — source + tier + bias + notes
+COL_4_SOURCE_EVAL   = [2.0*inch, 0.6*inch, 0.7*inch, 3.2*inch]
+
+# 5 columns — scale table
+COL_5_SCALE         = [0.6*inch, 1.4*inch, 4.5*inch]
 ```
 
-Four-column table:
+### How to Call the Function
+
 ```python
-col_widths = [1.0*inch, 0.8*inch, 0.8*inch, 3.9*inch]  # sums to 6.5"
+# Source evaluation table example
+story.append(make_table(
+    headers=["Source", "Tier", "Bias Assessment"],
+    rows=[
+        ["Rogers Commission Report (1986)", 
+         "Tier 3*", 
+         "IIE applied. Presidential commission; NASA is an implicated party."],
+        ["Boisjoly Memo, July 31 1985", 
+         "Tier 1", 
+         "Internal document. Anti-institutional. No political bias."],
+    ],
+    col_widths=COL_3_SOURCE_NOTES
+))
+
+# Political bias table example
+story.append(make_table(
+    headers=["Source", "Source Bias", "Content Bias", "Notes"],
+    rows=[
+        ["Rogers Commission", "0", "0", 
+         "Technically neutral presentation. IIE applied."],
+    ],
+    col_widths=COL_3_BIAS_TABLE
+))
 ```
 
-**Standard table construction pattern:**
-```python
-table_data = [
-    [Paragraph("<b>Header 1</b>", cell_bold),
-     Paragraph("<b>Header 2</b>", cell_bold),
-     Paragraph("<b>Header 3</b>", cell_bold)],
-    [Paragraph("Row content", cell),
-     Paragraph("Row content", cell),
-     Paragraph("Row content", cell)],
-]
+### ABSOLUTE RULES — Never Violate These
 
-table = Table(table_data, colWidths=col_widths)
-table.setStyle(TableStyle([
-    ("BACKGROUND",   (0,0), (-1,0),  colors.HexColor("#DDDDDD")),
-    ("GRID",         (0,0), (-1,-1), 0.5, colors.black),
-    ("VALIGN",       (0,0), (-1,-1), "TOP"),
-    ("TOPPADDING",   (0,0), (-1,-1), 4),
-    ("BOTTOMPADDING",(0,0), (-1,-1), 4),
-    ("LEFTPADDING",  (0,0), (-1,-1), 4),
-    ("RIGHTPADDING", (0,0), (-1,-1), 4),
-]))
-story.append(table)
-```
+1. NEVER pass raw strings as table cell values. Always use Paragraph().
+   The make_table() function handles this automatically — use it.
 
-**VALIGN TOP is mandatory.** Without it, multi-line cells vertically centertheir content, which misaligns rows with uneven text lengths.
+2. NEVER omit col_widths. A table without explicit column widths WILL
+   overflow regardless of content length.
+
+3. NEVER use col_widths that do not sum to 6.5*inch. Measure twice.
+
+4. ALWAYS use make_table() for every table in every report. Do not write
+   custom table construction code. The function exists to prevent the
+   exact overflow errors that occur when tables are built ad hoc.
+
+5. If a cell value contains special characters (<, >, &), escape them:
+   Replace & with &amp;  Replace < with &lt;  Replace > with &gt;
 
 ---
 
